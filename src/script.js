@@ -8,6 +8,7 @@ import firefliesVertexShader from './shaders/fireflies/vertex.glsl'
 import firefliesFragmentShader from './shaders/fireflies/fragment.glsl'
 import portalVertexShader from './shaders/portal/vertex.glsl'
 import portalFragmentShader from './shaders/portal/fragment.glsl'
+import { ARButton } from 'three/examples/jsm/webxr/ARButton';
 
 /**
  * Base
@@ -193,6 +194,11 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
+renderer.xr.enabled = true
+
+//Add the AR button to the body of the DOM
+const button = ARButton.createButton(renderer);
+document.body.appendChild(button);
 
 //clear color
 debugObject.clearColor = '#201300'
