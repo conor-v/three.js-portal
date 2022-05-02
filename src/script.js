@@ -194,7 +194,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
-renderer.xr.enabled = true
+renderer.xr.enabled = false
 
 //Add the AR button to the body of the DOM
 const button = ARButton.createButton(renderer);
